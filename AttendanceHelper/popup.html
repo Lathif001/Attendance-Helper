@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Attendance Helper</title>
+
+<style>
+body{
+  margin:0;
+  padding:12px;
+  width:380px;
+  font-family:Arial;
+  background:#eef2ff;
+}
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:16px;
+  box-shadow:0 6px 16px rgba(0,0,0,.15);
+}
+#themeToggle{
+  position:absolute;top:12px;right:12px;
+  border:none;border-radius:50%;
+  width:30px;height:30px;cursor:pointer;
+}
+.profile{display:flex;gap:10px;align-items:center;}
+.profile img{
+  width:46px;height:46px;border-radius:50%;
+  object-fit:cover;background:#e0e7ff;
+}
+.profile-name{font-weight:bold;}
+.overall{
+  text-align:center;margin-top:12px;
+}
+.overall-percent{
+  font-size:34px;font-weight:bold;
+}
+.bar-bg{
+  height:10px;background:#e5e7eb;border-radius:10px;margin:8px 0;
+}
+.bar{height:10px;border-radius:10px;width:0%;}
+.stats{font-size:13px;line-height:1.5;}
+button.toggle{
+  width:100%;margin-top:12px;
+  padding:10px;border:none;border-radius:10px;
+  background:#2563eb;color:#fff;font-weight:bold;cursor:pointer;
+}
+.subject{
+  font-size:13px;padding:7px;margin:6px 0;border-radius:8px;
+}
+.good{background:#d1fae5;color:#065f46;}
+.bad{background:#fee2e2;color:#7f1d1d;}
+.footer{text-align:center;font-size:11px;margin-top:10px;opacity:.6;}
+
+body.dark{background:#020617;}
+body.dark .card{background:#020617;color:#e5e7eb;}
+body.dark .good{background:#065f46;color:#d1fae5;}
+body.dark .bad{background:#7f1d1d;color:#fee2e2;}
+body.dark .bar-bg{background:#334155;}
+</style>
+</head>
+
+<body>
+
+<button id="themeToggle">🌙</button>
+
+<div class="card">
+  <div class="profile">
+    <img id="photo">
+    <div>
+      <div id="name" class="profile-name">Student</div>
+      <div id="roll">—</div>
+      <div id="login">Last login: —</div>
+    </div>
+  </div>
+
+  <div class="overall">
+    <div id="overall" class="overall-percent">--%</div>
+    <div class="bar-bg"><div id="bar" class="bar"></div></div>
+    <div id="stats" class="stats"></div>
+  </div>
+
+  <button id="toggleBtn" class="toggle">Show Subject Details</button>
+  <div id="subjects" style="display:none;"></div>
+
+  <div class="footer">Attendance Helper</div>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>

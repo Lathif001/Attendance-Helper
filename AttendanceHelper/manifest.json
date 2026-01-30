@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Attendance Helper",
+  "version": "2.0",
+  "description": "Smart Attendance Analyzer for MITS",
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://mitsims.in/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "host_permissions": [
+    "*://mitsims.in/*"
+  ]
+}
